@@ -3,6 +3,7 @@ package jeu.Vues;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
+import javafx.scene.text.Font;
 import jeu.Ecouteur.EcouteurCase;
 import jeu.Jeu;
 import jeu.Observateur;
@@ -36,6 +37,8 @@ public class VuePlateau extends GridPane implements Observateur {
 
                 Button button = new Button("" + nb);
                 button.setMinSize(sizeXButton, sizeYButton);
+                button.setFont(Font.loadFont(getClass().getResourceAsStream("/TheRumor.ttf"), 20));
+
                 this.add(button, i, j);
                 cases.add(button);
 
