@@ -1,13 +1,13 @@
 package jeu;
 
 public class Jeu extends SujetObserve{
-    private int taille;
+    private int size;
 
-    public Jeu(){
-        this.taille = 4;
+    public Jeu() {
+        this.size = 4;
     }
 
-    public int getTaille() {
-        return taille;
+    public int size() {
+        return size;
     }
 }
