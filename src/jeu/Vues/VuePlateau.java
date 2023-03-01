@@ -6,6 +6,7 @@ import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import jeu.Ecouteur.EcouteurCase;
 import jeu.Jeu;
 import jeu.Observateur;
@@ -36,6 +37,8 @@ public class VuePlateau extends GridPane implements Observateur {
                 Button button = new Button(jeu.getCase(lig, col) + "");
                 button.setMinSize(sizeXButton, sizeYButton);
                 button.setBackground(new Background(new BackgroundFill(Color.valueOf("#5CDBC0"), null, null)));
+                Font font = Font.loadFont(this.getClass().getResourceAsStream("/TheRumor.ttf"), 20);
+                button.setFont(font);
 
                 this.add(button, lig, col);
                 cases.add(button);

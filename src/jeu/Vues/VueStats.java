@@ -1,14 +1,29 @@
 package jeu.Vues;
 
+import javafx.scene.control.Label;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import jeu.Jeu;
 import jeu.Observateur;
 
+
 public class VueStats extends Pane implements Observateur {
     private Jeu jeu;
+    private Label stats;
 
     public VueStats(Jeu jeu) {
         this.jeu = jeu;
+
+        this.setBackground(new Background(new BackgroundFill(Color.valueOf("#72F27A"), null, null)));
+
+        this.stats = new Label("Nombre de parties jouees : " + jeu.getNbJouees());
+        Font font = Font.loadFont(this.getClass().getResourceAsStream("/TheRumor.ttf"), 30);
+        this.stats.setFont(font);
+
+        this.getChildren().add(stats);
     }
 
     @Override
