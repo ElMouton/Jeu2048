@@ -1,5 +1,6 @@
 package jeu;
 
+import javafx.scene.control.Alert;
 import jeu.Observateur.SujetObserve;
 
 import java.util.ArrayList;
@@ -16,6 +17,7 @@ public class Jeu extends SujetObserve {
         this.nbJouee = 1;
         this.nbGagnee = 0;
         this.size = 4;
+        this.objectif = 2048;
         this.nombre = new ArrayList<>(this.size * this.size);
 
         for (int i = 0; i < this.size * this.size; i++) {
@@ -37,10 +39,6 @@ public class Jeu extends SujetObserve {
             this.nombre.add(nb);
         }
         this.notifierObservateurs();
-    }
-
-    public void jouer(int l, int c) {
-
     }
 
     public int size() {
@@ -67,6 +65,7 @@ public class Jeu extends SujetObserve {
 
     public void setObjectif(int objectif) {
         this.objectif = objectif;
+        this.notifierObservateurs();
     }
 
     public void nouveauNombre(int l, int c) {
@@ -79,5 +78,24 @@ public class Jeu extends SujetObserve {
     public void doublement(int l, int c){
         this.nombre.set(c + l * this.size(), this.nombre.get(c + l * this.size()) * 2);
         this.notifierObservateurs();
+    }
+
+    public void testGagner(){
+        for(int i : this.nombre){
+            if(i >= this.objectif){
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("OBJECTIF ATTEINT");
+                alert.setHeaderText("Vous avez gagné!");
+                alert.setContentText("I have a great message for you!");
+
+                alert.showAndWait();
+
+
+                this.nbGagnee++;
+                this.nbJouee++;
+                this.nouveau();
+                this.notifierObservateurs();
+            }
+        }
     }
 }

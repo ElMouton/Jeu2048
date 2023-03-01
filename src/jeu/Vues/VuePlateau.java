@@ -77,5 +77,6 @@ public class VuePlateau extends GridPane implements Observateur {
                 button.setOnAction(new EcouteurCase(col, lig, this.jeu));
             }
         }
+        this.jeu.testGagner();
     }
 }

@@ -24,10 +24,12 @@ public class VueStats extends Pane implements Observateur {
         this.stats.setFont(font);
 
         this.getChildren().add(stats);
+
+        jeu.ajouterObservateur(this);
     }
 
     @Override
     public void reagir() {
-        this.stats = new Label("Nombre de parties jouees : " + jeu.getNbJouees());
+        this.stats.setText("Nombre de parties jouees / Nombre de parties gagnees : " + jeu.getNbJouees() + " / " + jeu.getNbGagnees());
     }
 }
