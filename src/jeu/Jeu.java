@@ -16,7 +16,7 @@ public class Jeu extends SujetObserve {
 
         for (int i = 0; i < this.size * this.size; i++) {
             Random r = new Random();
-            int nb = (int) Math.pow(2, r.nextInt(8) + 1);
+            int nb = (int) Math.pow(2, r.nextInt(3) + 1);
 
             this.nombre.add(nb);
         }
@@ -24,7 +24,15 @@ public class Jeu extends SujetObserve {
 
     public void nouveau() {
         this.size = 4;
+        this.nombre = new ArrayList<>(this.size * this.size);
 
+        for (int i = 0; i < this.size * this.size; i++) {
+            Random r = new Random();
+            int nb = (int) Math.pow(2, r.nextInt(3) + 1);
+
+            this.nombre.add(nb);
+        }
+        this.notifierObservateurs();
     }
 
     public void jouer(int l, int c) {

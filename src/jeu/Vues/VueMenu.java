@@ -23,7 +23,11 @@ public class VueMenu extends MenuBar implements Observateur {
         quitter.setAccelerator(KeyCombination.keyCombination("Ctrl+Q"));
         quitter.setOnAction(actionEvent -> Platform.exit());
 
-        menu.getItems().addAll(nouveau, quitter);
+        MenuItem taille = new MenuItem("Taille");
+
+        MenuItem objectif = new MenuItem("Objectif");
+
+        menu.getItems().addAll(nouveau, quitter, taille);
         this.getMenus().add(menu);
     }
 
