@@ -9,12 +9,12 @@ public class SujetObserve {
         this.obs = new ArrayList<>();
     }
 
-    public void ajouterObservateur(Observateur obs){
+    public void ajouterObservateur(Observateur obs) {
         this.obs.add(obs);
     }
 
-    public void notifierObservateurs(){
-        for(Observateur obs : this.obs){
+    public void notifierObservateurs() {
+        for (Observateur obs : this.obs) {
             obs.reagir();
         }
     }

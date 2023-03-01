@@ -11,7 +11,6 @@ import jeu.Jeu;
 import jeu.Observateur;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 public class VuePlateau extends GridPane implements Observateur {
     private Jeu jeu;
@@ -32,19 +31,18 @@ public class VuePlateau extends GridPane implements Observateur {
         this.setHgap(sizeX);
         this.setVgap(sizeY);
 
-        for (int col = 0; col < this.jeu.size(); col++) {
-            for (int lig = 0; lig < this.jeu.size(); lig++) {
+        for (int lig = 0; lig < this.jeu.size(); lig++) {
+            for (int col = 0; col < this.jeu.size(); col++) {
                 Button button = new Button(jeu.getCase(lig, col) + "");
                 button.setMinSize(sizeXButton, sizeYButton);
                 button.setBackground(new Background(new BackgroundFill(Color.valueOf("#5CDBC0"), null, null)));
 
-                this.add(button, col, lig);
+                this.add(button, lig, col);
                 cases.add(button);
 
-                button.setOnAction(new EcouteurCase(col, lig, this.jeu));
+                button.setOnAction(new EcouteurCase(lig, col, this.jeu));
             }
         }
-
         jeu.ajouterObservateur(this);
     }
 

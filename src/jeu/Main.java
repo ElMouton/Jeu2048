@@ -16,7 +16,6 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) {
         Jeu jeu = new Jeu();
-        jeu.print();
 
         BorderPane root = new BorderPane();
 

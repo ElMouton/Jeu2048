@@ -11,7 +11,7 @@ import jeu.Observateur;
 public class VueMenu extends MenuBar implements Observateur {
     private Jeu jeu;
 
-    public VueMenu(Jeu jeu){
+    public VueMenu(Jeu jeu) {
         this.jeu = jeu;
         Menu menu = new Menu("Jeu");
 
