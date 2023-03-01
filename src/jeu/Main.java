@@ -16,6 +16,7 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) {
         Jeu jeu = new Jeu();
+        jeu.print();
 
         BorderPane root = new BorderPane();
 
@@ -23,8 +24,8 @@ public class Main extends Application {
         root.setBottom(new VueStats(jeu));
         root.setTop(new VueMenu(jeu));
 
-        stage.setScene(new Scene(root, 1000, 700));
         stage.setTitle("2048");
+        stage.setScene(new Scene(root, 1000, 700));
         stage.show();
     }
 }

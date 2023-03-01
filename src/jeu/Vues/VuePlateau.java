@@ -6,7 +6,6 @@ import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
 import jeu.Ecouteur.EcouteurCase;
 import jeu.Jeu;
 import jeu.Observateur;
@@ -35,20 +34,14 @@ public class VuePlateau extends GridPane implements Observateur {
 
         for (int col = 0; col < this.jeu.size(); col++) {
             for (int lig = 0; lig < this.jeu.size(); lig++) {
-                Random r = new Random();
-
-                int nb = (int) Math.pow(2, r.nextInt(1, 12));
-
-                Button button = new Button(nb + "");
+                Button button = new Button(jeu.getCase(lig, col) + "");
                 button.setMinSize(sizeXButton, sizeYButton);
                 button.setBackground(new Background(new BackgroundFill(Color.valueOf("#5CDBC0"), null, null)));
-                button.setFont(Font.loadFont(getClass().getResourceAsStream("/TheRumor.ttf"), 20));
-
 
                 this.add(button, col, lig);
                 cases.add(button);
 
-                button.setOnAction(new EcouteurCase(col, lig));
+                button.setOnAction(new EcouteurCase(col, lig, this.jeu));
             }
         }
 
@@ -57,6 +50,5 @@ public class VuePlateau extends GridPane implements Observateur {
 
     @Override
     public void reagir() {
-
     }
 }

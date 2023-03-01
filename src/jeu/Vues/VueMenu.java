@@ -16,7 +16,8 @@ public class VueMenu extends MenuBar implements Observateur {
         Menu menu = new Menu("Jeu");
 
         MenuItem nouveau = new MenuItem("Nouveau");
-
+        nouveau.setAccelerator(KeyCombination.keyCombination("Ctrl+N"));
+        nouveau.setOnAction(actionEvent -> jeu.nouveau());
 
         MenuItem quitter = new MenuItem("Quitter");
         quitter.setAccelerator(KeyCombination.keyCombination("Ctrl+Q"));
