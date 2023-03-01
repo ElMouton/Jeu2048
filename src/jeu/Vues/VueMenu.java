@@ -5,6 +5,7 @@ import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.input.KeyCombination;
+import jeu.Ecouteur.EcouteurObjectif;
 import jeu.Ecouteur.EcouteurTaille;
 import jeu.Jeu;
 import jeu.Observateur.Observateur;
@@ -28,6 +29,7 @@ public class VueMenu extends MenuBar implements Observateur {
         taille.setOnAction(new EcouteurTaille(this.jeu));
 
         MenuItem objectif = new MenuItem("Objectif");
+        objectif.setOnAction(new EcouteurObjectif(this.jeu));
 
         menu.getItems().addAll(nouveau, quitter, taille);
         this.getMenus().add(menu);

@@ -22,6 +22,6 @@ public class EcouteurTaille implements EventHandler {
         inputTaille.setContentText("Taille :");
 
         Optional<String> result = inputTaille.showAndWait();
-        result.ifPresent(name -> jeu.setTaille(Integer.parseInt(name)));
+        result.ifPresent(taille -> jeu.setTaille(Integer.parseInt(taille)));
     }
 }
