@@ -59,4 +59,9 @@ public class Jeu extends SujetObserve {
 
         this.nombre.set(c + l * this.size(), nb);
     }
+
+    public void doublement(int l, int c){
+        this.nombre.set(c + l * this.size(), this.nombre.get(c + l * this.size()) * 2);
+        this.notifierObservateurs();
+    }
 }

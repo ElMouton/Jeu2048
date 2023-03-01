@@ -52,5 +52,22 @@ public class VuePlateau extends GridPane implements Observateur {
 
     @Override
     public void reagir() {
+        int sizeXButton = 100;
+        int sizeYButton = 70;
+
+        for (int lig = 0; lig < this.jeu.size(); lig++) {
+            for (int col = 0; col < this.jeu.size(); col++) {
+                Button button = new Button(jeu.getCase(lig, col) + "");
+                button.setMinSize(sizeXButton, sizeYButton);
+                button.setBackground(new Background(new BackgroundFill(Color.valueOf("#5CDBC0"), null, null)));
+
+                Font font = Font.loadFont(this.getClass().getResourceAsStream("/TheRumor.ttf"), 20);
+                button.setFont(font);
+
+                this.add(button, lig, col);
+
+                button.setOnAction(new EcouteurCase(col, lig, this.jeu));
+            }
+        }
     }
 }

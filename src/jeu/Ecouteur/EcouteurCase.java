@@ -51,8 +51,8 @@ public class EcouteurCase implements EventHandler {
             this.jeu.nouveauNombre(this.lig + 1, this.col);
         }
 
-        if (!find) {
-            System.out.println("non");
+        if (find) {
+            this.jeu.doublement(this.lig, this.col);
         }
     }
 }
