@@ -6,7 +6,7 @@ import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.input.KeyCombination;
 import jeu.Jeu;
-import jeu.Observateur;
+import jeu.Observateur.Observateur;
 
 public class VueMenu extends MenuBar implements Observateur {
     private Jeu jeu;

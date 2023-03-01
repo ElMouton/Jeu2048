@@ -7,7 +7,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import jeu.Jeu;
-import jeu.Observateur;
+import jeu.Observateur.Observateur;
 
 
 public class VueStats extends Pane implements Observateur {

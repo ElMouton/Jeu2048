@@ -1,4 +1,4 @@
-package jeu;
+package jeu.Observateur;
 
 import java.util.ArrayList;
 

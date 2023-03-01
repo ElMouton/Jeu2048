@@ -9,7 +9,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import jeu.Ecouteur.EcouteurCase;
 import jeu.Jeu;
-import jeu.Observateur;
+import jeu.Observateur.Observateur;
 
 import java.util.ArrayList;
 

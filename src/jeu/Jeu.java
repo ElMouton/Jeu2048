@@ -1,5 +1,7 @@
 package jeu;
 
+import jeu.Observateur.SujetObserve;
+
 import java.util.ArrayList;
 import java.util.Random;
 

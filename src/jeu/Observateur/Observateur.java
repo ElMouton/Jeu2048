@@ -1,4 +1,4 @@
-package jeu;
+package jeu.Observateur;
 
 public interface Observateur {
     void reagir();
