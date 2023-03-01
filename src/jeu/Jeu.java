@@ -34,7 +34,7 @@ public class Jeu extends SujetObserve {
     }
 
     public int getCase(int l, int c) {
-        return this.nombre.get(l + c * this.size());
+        return this.nombre.get(c + l * this.size());
     }
 
     public int getNbGagnees() {

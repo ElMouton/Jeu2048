@@ -28,6 +28,6 @@ public class VueStats extends Pane implements Observateur {
 
     @Override
     public void reagir() {
-
+        this.stats = new Label("Nombre de parties jouees : " + jeu.getNbJouees());
     }
 }
