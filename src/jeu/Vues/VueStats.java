@@ -19,7 +19,7 @@ public class VueStats extends Pane implements Observateur {
 
         this.setBackground(new Background(new BackgroundFill(Color.valueOf("#72F27A"), null, null)));
 
-        this.stats = new Label("Nombre de parties jouees : " + jeu.getNbJouees());
+        this.stats = new Label("Nombre de parties jouees / Nombre de parties gagnees : " + jeu.getNbJouees() + " / " + jeu.getNbGagnees());
         Font font = Font.loadFont(this.getClass().getResourceAsStream("/TheRumor.ttf"), 30);
         this.stats.setFont(font);
 

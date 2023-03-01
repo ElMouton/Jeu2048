@@ -7,10 +7,14 @@ import java.util.Random;
 
 public class Jeu extends SujetObserve {
     private int size;
+    private int nbJouee;
+    private int nbGagnee;
     private int objectif;
     private ArrayList<Integer> nombre;
 
     public Jeu() {
+        this.nbJouee = 1;
+        this.nbGagnee = 0;
         this.size = 4;
         this.nombre = new ArrayList<>(this.size * this.size);
 
@@ -23,7 +27,7 @@ public class Jeu extends SujetObserve {
     }
 
     public void nouveau() {
-        this.size = 4;
+        this.nbJouee++;
         this.nombre = new ArrayList<>(this.size * this.size);
 
         for (int i = 0; i < this.size * this.size; i++) {
@@ -48,15 +52,17 @@ public class Jeu extends SujetObserve {
     }
 
     public int getNbGagnees() {
-        return 0;
+        return nbGagnee;
     }
 
     public int getNbJouees() {
-        return 0;
+        return nbJouee;
     }
 
     public void setTaille(int taille) {
         this.size = taille;
+        this.nouveau();
+        this.notifierObservateurs();
     }
 
     public void setObjectif(int objectif) {
